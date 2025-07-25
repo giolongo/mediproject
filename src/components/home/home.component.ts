@@ -32,20 +32,18 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // Initialize currentImage immediately
     this.currentImage = this.images[this.index];
     this.index++;
 
     setInterval(() => {
-      // Set currentImage to null briefly to trigger :leave, then update it to trigger :enter
-      this.currentImage = null; // This will trigger the :leave animation
+      this.currentImage = null;
       setTimeout(() => {
-        this.currentImage = this.images[this.index]; // This will trigger the :enter animation
+        this.currentImage = this.images[this.index];
         this.index++;
-        if (this.index >= this.images.length) { // Use >= for correct boundary check
+        if (this.index >= this.images.length) {
           this.index = 0;
         }
-      }, 500); // This timeout should be slightly longer than your :leave animation duration
+      }, 500);
     }, 5000);
   }
 }
