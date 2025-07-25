@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { MenuModel } from '../../app/models/menu.model';
 
 @Component({
   selector: 'app-header',
@@ -24,6 +25,13 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   isMobileMenuOpen = false;
+
+  public menu: MenuModel[] = [
+    {label: 'Home', src: '/home'},
+    {label: 'Prodotti', src: '/products'},
+    {label: 'Chi Siamo', src: '/who'},
+    {label: 'Contattaci', src: '/contact'},
+  ]
 
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

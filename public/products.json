@@ -1,0 +1,21 @@
+[
+    {
+      "src": "./slider/1.jpg",
+      "alt": "Natura",
+      "title": "Paesaggio Incredibile",
+      "description": "Descrizione 1"
+    },
+    {
+      "src": "./slider/2.jpg",
+      "alt": "Città",
+      "title": "Panorama Urbano",
+      "description": "Descrizione 2"
+    },
+    {
+      "src": "./slider/3.jpg",
+      "alt": "Montagne",
+      "title": "Vette Maestose",
+      "description": "Descrizione 3"
+    }
+  ]
+  

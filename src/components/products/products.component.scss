@@ -1,0 +1,26 @@
+.container-product {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 10px;
+
+    img {
+        width: 55%;
+        object-fit: cover;
+    }
+
+    .text-container {
+        display: flex;
+        text-align: center;
+        width: 45%;
+
+        div {
+            margin: auto;
+        }
+    }
+}
+
+.reverese-container {
+    flex-direction: row-reverse;
+}

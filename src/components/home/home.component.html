@@ -1,4 +1,4 @@
 <div style="height: 100%; width: 100%;">
     <img *ngIf="currentImage" [@fadeAnimation]="currentImage?.src" [src]="currentImage?.src" [alt]="currentImage?.alt" />
-    <h3>{{currentImage.description}}</h3>
+    <h3>{{currentImage?.description}}</h3>
 </div>

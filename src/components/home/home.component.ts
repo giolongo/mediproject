@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { ResourcesService } from '../../service/resources.service';
 
 @Component({
   selector: 'app-home',
@@ -22,25 +23,23 @@ import { trigger, style, animate, transition } from '@angular/animations';
 })
 export class HomeComponent implements OnInit {
 
+  private resourcesService = inject(ResourcesService)
+  resources = this.resourcesService.resources;
+
   public currentImage: any;
   public index = 0;
 
-  images = [
-    { src: './slider/1.jpg', alt: 'Natura', title: 'Paesaggio Incredibile', description: 'Descrizione 1' },
-    { src: './slider/2.jpg', alt: 'Città', title: 'Panorama Urbano', description: 'Descrizione 2' },
-    { src: './slider/3.jpg', alt: 'Montagne', title: 'Vette Maestose', description: 'Descrizione 3' }
-  ];
 
   ngOnInit(): void {
-    this.currentImage = this.images[this.index];
+    this.currentImage = this.resources()[this.index];
     this.index++;
 
     setInterval(() => {
       this.currentImage = null;
       setTimeout(() => {
-        this.currentImage = this.images[this.index];
+        this.currentImage = this.resources()[this.index];
         this.index++;
-        if (this.index >= this.images.length) {
+        if (this.index >= this.resources().length) {
           this.index = 0;
         }
       }, 500);

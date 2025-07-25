@@ -5,10 +5,9 @@
       </div>
       <nav class="nav-menu">
         <ul class="desktop-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
+          @for (item of menu; track $index) {
+            <li><a [routerLink]="item.src">{{item.label}}</a></li>
+          }
         </ul>
         <div class="hamburger-menu" (click)="toggleMobileMenu()">
           <ng-container *ngIf="!isMobileMenuOpen">&#9776;</ng-container> <ng-container *ngIf="isMobileMenuOpen">&#10006;</ng-container> </div>
@@ -16,10 +15,9 @@
     </div>
     <div class="mobile-menu" [class.open]="isMobileMenuOpen">
       <ul>
-        <li><a href="#" (click)="toggleMobileMenu()">Home</a></li>
-        <li><a href="#" (click)="toggleMobileMenu()">About</a></li>
-        <li><a href="#" (click)="toggleMobileMenu()">Services</a></li>
-        <li><a href="#" (click)="toggleMobileMenu()">Contact</a></li>
+        @for (item of menu; track $index) {
+          <li><a [routerLink]="item.src" (click)="toggleMobileMenu()">{{item.label}}</a></li>
+        }
       </ul>
     </div>
   </header>

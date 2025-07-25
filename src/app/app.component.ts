@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from "../components/footer/footer.component";
 import { HeaderComponent } from "../components/header/header.component";
+import { ResourcesService } from '../service/resources.service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,5 @@ import { HeaderComponent } from "../components/header/header.component";
 })
 export class AppComponent {
   title = 'mediproject';
+  private resourcesService = inject(ResourcesService)
 }

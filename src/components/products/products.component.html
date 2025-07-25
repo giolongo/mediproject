@@ -1,0 +1,11 @@
+@for (item of resources(); track $index) {
+<div class="container-product" [ngClass]="{'reverese-container': $index %2 == 0}">
+    <img [src]="item.src" [alt]="item.title" />
+    <div class="text-container">
+        <div>
+            <h1>{{item.title}}</h1>
+            <h4>{{item.description}}</h4>
+        </div>
+    </div>
+</div>
+}
