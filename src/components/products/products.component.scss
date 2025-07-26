@@ -2,12 +2,13 @@
     color: white;
     width: 100%;
     max-width: 400px;
+    min-width: 400px;
     min-height: 50vh;
     flex: 1 1 250px;
     box-sizing: border-box;
     margin: auto;
     img {
-        min-height: 30vh;
+        height: 35vh;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
     }
