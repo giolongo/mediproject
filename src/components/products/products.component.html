@@ -1,11 +1,19 @@
-@for (item of resources(); track $index) {
-<div class="container-product" [ngClass]="{'reverese-container': $index %2 == 0}">
-    <img [src]="item.src" [alt]="item.title" />
-    <div class="text-container">
-        <div>
-            <h1>{{item.title}}</h1>
-            <h4>{{item.description}}</h4>
-        </div>
-    </div>
+<div class="product-wrapper">
+    @for (product of resources(); track $index) {
+    <mat-card class="product-card" appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>{{product.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="product.src" [alt]="product.alt">
+        <mat-card-content>
+            <p>
+                {{product.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button="filled">Dettagli</button>
+        </mat-card-actions>
+    </mat-card>
+    }
 </div>
-}
