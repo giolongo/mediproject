@@ -1,43 +1,53 @@
+html,
+body {
+  height: 100dvh;
+  width: 100dvw;
+  /* Assicura che html e body occupino l'intera altezza della viewport */
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  /* Include padding e border nel calcolo dell'altezza/larghezza */
+  overflow: hidden;
+  /* Impedisce lo scroll del body */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(249, 154, 66, .25))
+}
 
-html, body {
-    height: 100%; /* Assicura che html e body occupino l'intera altezza della viewport */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box; /* Include padding e border nel calcolo dell'altezza/larghezza */
-    overflow: hidden; /* Impedisce lo scroll del body */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(249, 154, 66, .25))
-  }
-  
-  /* Applica Flexbox al body per disporre header, content e footer */
-  body {
-    display: flex;
-    flex-direction: column; /* Impila gli elementi verticalmente */
-  }
-  
-  /* L'header non ha bisogno di modifiche particolari, la sua altezza sarà quella del suo contenuto */
-  app-header {
-    flex-shrink: 0; /* Impedisce all'header di rimpicciolirsi */
-  }
-  
-  /* Il footer non ha bisogno di modifiche particolari, la sua altezza sarà quella del suo contenuto */
-  app-footer {
-    flex-shrink: 0; /* Impedisce al footer di rimpicciolirsi */
-  }
+/* Applica Flexbox al body per disporre header, content e footer */
+body {
+  display: flex;
+  flex-direction: column;
+  /* Impila gli elementi verticalmente */
+}
 
-  app-content {
-    flex-grow: 1; /* Permette al contenuto di espandersi e occupare lo spazio disponibile */
-    overflow-y: auto; /* Aggiunge scroll solo al contenuto se necessario */
-    display: flex; /* Utilizza flexbox anche per il contenuto per centrarlo o gestirlo meglio */
-    flex-direction: column;
-  }
+/* L'header non ha bisogno di modifiche particolari, la sua altezza sarà quella del suo contenuto */
+app-header {
+  flex-shrink: 0;
+  /* Impedisce all'header di rimpicciolirsi */
+}
 
-  app-home {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-  }
+/* Il footer non ha bisogno di modifiche particolari, la sua altezza sarà quella del suo contenuto */
+app-footer {
+  flex-shrink: 0;
+  /* Impedisce al footer di rimpicciolirsi */
+}
 
-  app-products {
-    width: 100%;
-    height: 100%;
-  }
+app-content {
+  flex-grow: 1;
+  /* Permette al contenuto di espandersi e occupare lo spazio disponibile */
+  overflow-y: auto;
+  /* Aggiunge scroll solo al contenuto se necessario */
+  display: flex;
+  /* Utilizza flexbox anche per il contenuto per centrarlo o gestirlo meglio */
+  flex-direction: column;
+}
+
+app-home {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+app-products {
+  width: 100%;
+  height: 100%;
+}
