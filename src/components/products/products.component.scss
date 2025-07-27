@@ -7,20 +7,26 @@
     flex: 1 1 250px;
     box-sizing: border-box;
     margin: auto;
+
     img {
         height: 35vh;
         border-radius: 10px;
         transition: transform 0.3s ease-in-out;
     }
+
     &:hover img {
         transform: scale(1.05); // Zoom leggero
-      }
+    }
+
+    @media (max-width: 420px) {
+        min-width: 100%;
+    }
 }
 
 .header-image {
     background-image: url('/mini_logo.png');
     background-size: cover;
-  }
+}
 
 .product-wrapper {
     display: flex;
@@ -31,3 +37,11 @@
     box-sizing: border-box;
     overflow-y: auto;
 }
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .product-card img {
+      height: 50vw;         // Usa larghezza dello schermo come base
+      object-fit: cover;    // Riempie bene senza distorsioni
+      max-height: 300px;    // Limite massimo per evitare immagini troppo grandi
+    }
+  }
