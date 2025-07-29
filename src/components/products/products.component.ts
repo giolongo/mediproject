@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ResourceModel } from '../../app/models/resource.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -23,6 +25,12 @@ import { animate, style, transition, trigger } from '@angular/animations';
 export class ProductsComponent {
 
   private resourcesService = inject(ResourcesService);
+  private router = inject(Router);
   resources = this.resourcesService.resources;
+
+  public detailProduct(product: ResourceModel){
+    console.log(product)
+    this.router.navigate(['/products', product.id]);
+  }
 
 }

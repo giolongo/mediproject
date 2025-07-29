@@ -10,8 +10,7 @@ export const routes: Routes = [
     {
         path: 'products',
         loadChildren: () =>
-            import('../components/products/products.routes').then(m => m.PRODUCTS_ROUTES),
-        pathMatch: 'full'
+            import('../components/products/products.routes').then(m => m.PRODUCTS_ROUTES)
     },
     {
         path: '**',

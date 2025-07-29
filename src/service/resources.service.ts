@@ -11,7 +11,7 @@ export class ResourcesService {
   public resources = signal<ResourceModel[]>([]);
 
   constructor() { 
-    this.resourceRestService.getResource().subscribe((resources) => {
+    this.resourceRestService.getResources().subscribe((resources) => {
       this.resources.set(resources)
     });
   }
