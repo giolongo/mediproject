@@ -1,48 +1,40 @@
 {
   "id": 3,
   "src": "./slider/3.jpg",
-  "title": "Prodotto Medico Avanzato",
-  "description": "Il Sfigmomanometro Digitale da Braccio MedCare Pro+ rappresenta l'eccellenza nella misurazione della pressione arteriosa domiciliare. Progettato per un utilizzo semplice e preciso, questo dispositivo combina tecnologie all'avanguardia con un design ergonomico e intuitivo, rendendolo ideale sia per l’uso personale che professionale.Dotato di un ampio display LCD retroilluminato ad alta definizione, il dispositivo consente una lettura chiara e immediata anche in condizioni di scarsa illuminazione. La tecnologia IntelliSense™ garantisce un gonfiaggio ottimale del bracciale, adattandosi automaticamente alla circonferenza del braccio per una misurazione confortevole e accurata.Grazie alla memoria interna fino a 120 rilevazioni per 2 utenti, il MedCare Pro+ permette il monitoraggio costante nel tempo, supportando una gestione consapevole della propria salute cardiovascolare. Il dispositivo rileva automaticamente aritmie cardiache, fornendo un ulteriore livello di sicurezza e prevenzione.Il bracciale universale incluso è realizzato in materiale ipoallergenico, lavabile e adatto a braccia di circonferenza compresa tra 22 e 42 cm. Il dispositivo è inoltre certificato secondo le direttive MDD 93/42/EEC per dispositivi medici e validato clinicamente secondo i protocolli ESH (European Society of Hypertension).Completo di batterie, custodia da viaggio, manuale in italiano e porta USB-C per alimentazione opzionale, il MedCare Pro+ è il compagno ideale per chi cerca affidabilità, praticità e precisione nella cura quotidiana della propria salute.",
-  "techical_data": [
+  "title": "Aurex",
+  "description": "Sistema otoscopico digitale di ultima generazione, progettato per fornire esami auricolari ad alta precisione e documentazione visiva in tempo reale. Equipaggiato con una telecamera ad alta definizione e illuminazione LED regolabile, Aurex consente ai medici di individuare patologie dell’orecchio medio e esterno con estrema accuratezza. Il dispositivo integra funzioni di registrazione video e scatto di immagini, facilitando la condivisione dei dati con altri specialisti o l’archiviazione per il follow-up clinico.",
+  "technical_data": [
     {
-      "label": "Tecnologia di misurazione",
-      "value": "Oscillometrica con algoritmo IntelliSense™"
+      "label": "Camera",
+      "value": "HD 1080p con zoom ottico 5x"
+    },
+    {
+      "label": "Illuminazione",
+      "value": "LED regolabile con luce fredda"
     },
     {
       "label": "Display",
-      "value": "LCD retroilluminato ad alta leggibilità"
+      "value": "Schermo LCD 5\" integrato"
     },
     {
-      "label": "Range di misurazione",
-      "value": "Pressione: 0–299 mmHg, Frequenza cardiaca: 40–180 bpm"
+      "label": "Connettività",
+      "value": "Wi-Fi, USB-C per trasferimento dati"
     },
     {
-      "label": "Precisione",
-      "value": "±3 mmHg (pressione), ±5% (battito)"
+      "label": "Registrazione",
+      "value": "Video e immagini con archiviazione su SD card"
     },
     {
-      "label": "Memoria",
-      "value": "2 utenti x 120 misurazioni"
+      "label": "Autonomia",
+      "value": "Batteria ricaricabile con 3 ore di utilizzo continuo"
     },
     {
-      "label": "Rilevamento aritmie",
-      "value": "Sì, con indicatore automatico"
-    },
-    {
-      "label": "Bracciale",
-      "value": "Universale 22–42 cm, lavabile e ipoallergenico"
-    },
-    {
-      "label": "Alimentazione",
-      "value": "4x AAA (incluse) o USB-C (opzionale)"
+      "label": "Peso",
+      "value": "350 grammi"
     },
     {
       "label": "Certificazioni",
-      "value": "CE 0123, MDD 93/42/EEC, validato ESH"
-    },
-    {
-      "label": "Spegnimento automatico",
-      "value": "Dopo 60 secondi di inattività"
+      "value": "CE 93/42/EEC, FDA 510(k)"
     }
-  ]    
+  ]
 }

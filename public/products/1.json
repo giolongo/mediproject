@@ -1,48 +1,40 @@
 {
-    "id": 1,
-    "src": "./slider/1.jpg",
-    "title": "Prodotto Medico Avanzato",
-    "description": "Il Sfigmomanometro Digitale da Braccio MedCare Pro+ rappresenta l'eccellenza nella misurazione della pressione arteriosa domiciliare. Progettato per un utilizzo semplice e preciso, questo dispositivo combina tecnologie all'avanguardia con un design ergonomico e intuitivo, rendendolo ideale sia per l’uso personale che professionale.Dotato di un ampio display LCD retroilluminato ad alta definizione, il dispositivo consente una lettura chiara e immediata anche in condizioni di scarsa illuminazione. La tecnologia IntelliSense™ garantisce un gonfiaggio ottimale del bracciale, adattandosi automaticamente alla circonferenza del braccio per una misurazione confortevole e accurata.Grazie alla memoria interna fino a 120 rilevazioni per 2 utenti, il MedCare Pro+ permette il monitoraggio costante nel tempo, supportando una gestione consapevole della propria salute cardiovascolare. Il dispositivo rileva automaticamente aritmie cardiache, fornendo un ulteriore livello di sicurezza e prevenzione.Il bracciale universale incluso è realizzato in materiale ipoallergenico, lavabile e adatto a braccia di circonferenza compresa tra 22 e 42 cm. Il dispositivo è inoltre certificato secondo le direttive MDD 93/42/EEC per dispositivi medici e validato clinicamente secondo i protocolli ESH (European Society of Hypertension).Completo di batterie, custodia da viaggio, manuale in italiano e porta USB-C per alimentazione opzionale, il MedCare Pro+ è il compagno ideale per chi cerca affidabilità, praticità e precisione nella cura quotidiana della propria salute.",
-    "techical_data": [
-      {
-        "label": "Tecnologia di misurazione",
-        "value": "Oscillometrica con algoritmo IntelliSense™"
-      },
-      {
-        "label": "Display",
-        "value": "LCD retroilluminato ad alta leggibilità"
-      },
-      {
-        "label": "Range di misurazione",
-        "value": "Pressione: 0–299 mmHg, Frequenza cardiaca: 40–180 bpm"
-      },
-      {
-        "label": "Precisione",
-        "value": "±3 mmHg (pressione), ±5% (battito)"
-      },
-      {
-        "label": "Memoria",
-        "value": "2 utenti x 120 misurazioni"
-      },
-      {
-        "label": "Rilevamento aritmie",
-        "value": "Sì, con indicatore automatico"
-      },
-      {
-        "label": "Bracciale",
-        "value": "Universale 22–42 cm, lavabile e ipoallergenico"
-      },
-      {
-        "label": "Alimentazione",
-        "value": "4x AAA (incluse) o USB-C (opzionale)"
-      },
-      {
-        "label": "Certificazioni",
-        "value": "CE 0123, MDD 93/42/EEC, validato ESH"
-      },
-      {
-        "label": "Spegnimento automatico",
-        "value": "Dopo 60 secondi di inattività"
-      }
-    ]    
-  }
+  "id": 1,
+  "src": "./slider/1.jpg",
+  "title": "Nuvex",
+  "description": "Dispositivo portatile per diagnosi ecografica ad alta risoluzione, progettato per offrire immagini chiare e dettagliate in tempo reale. Dotato di tecnologia avanzata di imaging a ultrasuoni con trasduttori multi-frequenza, Nuvex permette agli operatori sanitari di effettuare esami ecografici rapidi e precisi, sia in ambito ospedaliero che in contesti di pronto soccorso o visite domiciliari. La sua interfaccia intuitiva e la connettività wireless facilitano la condivisione immediata dei dati con specialisti e archivi digitali, migliorando l’efficienza diagnostica.",
+  "technical_data": [
+    {
+      "label": "Tecnologia di imaging",
+      "value": "Ultrasuoni multi-frequenza (2-15 MHz)"
+    },
+    {
+      "label": "Display",
+      "value": "Touchscreen LCD 10.1\" ad alta definizione"
+    },
+    {
+      "label": "Connettività",
+      "value": "Wi-Fi, Bluetooth, USB"
+    },
+    {
+      "label": "Portabilità",
+      "value": "Peso 1.2 kg, batteria integrata con autonomia 4 ore"
+    },
+    {
+      "label": "Software",
+      "value": "Interfaccia user-friendly con supporto AI per analisi automatica"
+    },
+    {
+      "label": "Memoria",
+      "value": "Archiviazione locale fino a 5000 immagini e video"
+    },
+    {
+      "label": "Accessori",
+      "value": "Trasduttori lineari, convessi e endocavitari"
+    },
+    {
+      "label": "Certificazioni",
+      "value": "CE 93/42/EEC, FDA 510(k)"
+    }
+  ]
+}

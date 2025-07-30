@@ -1,48 +1,40 @@
 {
   "id": 4,
   "src": "./slider/4.jpg",
-  "title": "Prodotto Medico Avanzato",
-  "description": "Il Sfigmomanometro Digitale da Braccio MedCare Pro+ rappresenta l'eccellenza nella misurazione della pressione arteriosa domiciliare. Progettato per un utilizzo semplice e preciso, questo dispositivo combina tecnologie all'avanguardia con un design ergonomico e intuitivo, rendendolo ideale sia per l’uso personale che professionale.Dotato di un ampio display LCD retroilluminato ad alta definizione, il dispositivo consente una lettura chiara e immediata anche in condizioni di scarsa illuminazione. La tecnologia IntelliSense™ garantisce un gonfiaggio ottimale del bracciale, adattandosi automaticamente alla circonferenza del braccio per una misurazione confortevole e accurata.Grazie alla memoria interna fino a 120 rilevazioni per 2 utenti, il MedCare Pro+ permette il monitoraggio costante nel tempo, supportando una gestione consapevole della propria salute cardiovascolare. Il dispositivo rileva automaticamente aritmie cardiache, fornendo un ulteriore livello di sicurezza e prevenzione.Il bracciale universale incluso è realizzato in materiale ipoallergenico, lavabile e adatto a braccia di circonferenza compresa tra 22 e 42 cm. Il dispositivo è inoltre certificato secondo le direttive MDD 93/42/EEC per dispositivi medici e validato clinicamente secondo i protocolli ESH (European Society of Hypertension).Completo di batterie, custodia da viaggio, manuale in italiano e porta USB-C per alimentazione opzionale, il MedCare Pro+ è il compagno ideale per chi cerca affidabilità, praticità e precisione nella cura quotidiana della propria salute.",
-  "techical_data": [
+  "title": "Zynera",
+  "description": "Piattaforma automatizzata per analisi ematologiche da laboratorio, che combina tecnologia di citometria a flusso e imaging digitale per eseguire un ampio spettro di test del sangue in modo rapido e preciso. Zynera è progettata per ottimizzare il flusso di lavoro dei laboratori clinici, riducendo gli errori manuali e garantendo risultati affidabili attraverso algoritmi di intelligenza artificiale che interpretano i dati in modo autonomo. Il sistema supporta anche l’integrazione con sistemi informativi ospedalieri (HIS) per una gestione efficiente dei referti.",
+  "technical_data": [
     {
-      "label": "Tecnologia di misurazione",
-      "value": "Oscillometrica con algoritmo IntelliSense™"
+      "label": "Tecnologia",
+      "value": "Citometria a flusso combinata con imaging digitale"
     },
     {
-      "label": "Display",
-      "value": "LCD retroilluminato ad alta leggibilità"
+      "label": "Parametri analizzati",
+      "value": "Conta cellulare, differenziazione leucocitaria, emoglobina, reticolociti"
     },
     {
-      "label": "Range di misurazione",
-      "value": "Pressione: 0–299 mmHg, Frequenza cardiaca: 40–180 bpm"
+      "label": "Capacità di analisi",
+      "value": "Fino a 120 campioni/ora"
     },
     {
-      "label": "Precisione",
-      "value": "±3 mmHg (pressione), ±5% (battito)"
+      "label": "Software",
+      "value": "Algoritmi AI per analisi automatica e validazione risultati"
     },
     {
-      "label": "Memoria",
-      "value": "2 utenti x 120 misurazioni"
+      "label": "Integrazione",
+      "value": "Compatibile con sistemi HIS e LIMS"
     },
     {
-      "label": "Rilevamento aritmie",
-      "value": "Sì, con indicatore automatico"
-    },
-    {
-      "label": "Bracciale",
-      "value": "Universale 22–42 cm, lavabile e ipoallergenico"
+      "label": "Dimensioni",
+      "value": "70 x 55 x 60 cm, peso 48 kg"
     },
     {
       "label": "Alimentazione",
-      "value": "4x AAA (incluse) o USB-C (opzionale)"
+      "value": "220V AC, consumo 500W"
     },
     {
       "label": "Certificazioni",
-      "value": "CE 0123, MDD 93/42/EEC, validato ESH"
-    },
-    {
-      "label": "Spegnimento automatico",
-      "value": "Dopo 60 secondi di inattività"
+      "value": "CE 98/79/EC, FDA 510(k)"
     }
-  ]    
+  ]
 }
