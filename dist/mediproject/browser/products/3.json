@@ -1,0 +1,40 @@
+{
+  "id": 3,
+  "src": "./slider/3.jpg",
+  "title": "Aurex",
+  "description": "Sistema otoscopico digitale di ultima generazione, progettato per fornire esami auricolari ad alta precisione e documentazione visiva in tempo reale. Equipaggiato con una telecamera ad alta definizione e illuminazione LED regolabile, Aurex consente ai medici di individuare patologie dell’orecchio medio e esterno con estrema accuratezza. Il dispositivo integra funzioni di registrazione video e scatto di immagini, facilitando la condivisione dei dati con altri specialisti o l’archiviazione per il follow-up clinico.",
+  "technical_data": [
+    {
+      "label": "Camera",
+      "value": "HD 1080p con zoom ottico 5x"
+    },
+    {
+      "label": "Illuminazione",
+      "value": "LED regolabile con luce fredda"
+    },
+    {
+      "label": "Display",
+      "value": "Schermo LCD 5\" integrato"
+    },
+    {
+      "label": "Connettività",
+      "value": "Wi-Fi, USB-C per trasferimento dati"
+    },
+    {
+      "label": "Registrazione",
+      "value": "Video e immagini con archiviazione su SD card"
+    },
+    {
+      "label": "Autonomia",
+      "value": "Batteria ricaricabile con 3 ore di utilizzo continuo"
+    },
+    {
+      "label": "Peso",
+      "value": "350 grammi"
+    },
+    {
+      "label": "Certificazioni",
+      "value": "CE 93/42/EEC, FDA 510(k)"
+    }
+  ]
+}
