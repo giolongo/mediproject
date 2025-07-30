@@ -1,4 +1,4 @@
-<div class="product-container" *ngIf="product">
+<div class="product-container" *ngIf="product" @slideInFromLeft>
     <div class="product-image">
       <img [src]="product.src" [alt]="product.title" />
     </div>

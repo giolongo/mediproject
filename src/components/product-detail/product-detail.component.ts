@@ -4,12 +4,21 @@ import { ResourceRestService } from '../../service/resource.rest.service';
 import { take } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ResourceDetailModel } from '../../app/models/resource-detail.model';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-product-detail',
   imports: [CommonModule],
   templateUrl: './product-detail.component.html',
-  styleUrl: './product-detail.component.scss'
+  styleUrl: './product-detail.component.scss',
+  animations: [
+    trigger('slideInFromLeft', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-30px)' }),
+        animate('700ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
 export class ProductDetailComponent implements OnInit{
 
