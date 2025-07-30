@@ -5,6 +5,7 @@ import { take } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ResourceDetailModel } from '../../app/models/resource-detail.model';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-detail',
@@ -24,6 +25,7 @@ export class ProductDetailComponent implements OnInit{
 
   private resourceRestService = inject(ResourceRestService);
   private router = inject(Router);
+  private titleService = inject(Title);
 
   public product?: ResourceDetailModel;
 
@@ -37,6 +39,7 @@ export class ProductDetailComponent implements OnInit{
     }
     this.resourceRestService.getResource(id).pipe(take(1)).subscribe((product) => {
       this.product = product;
+      this.titleService.setTitle(`${product.title} - MediProject`)
     })
   }
 }

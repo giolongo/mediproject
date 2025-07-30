@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-who-are',
@@ -15,6 +16,11 @@ import { Component } from '@angular/core';
     ])
   ]
 })
-export class WhoAreComponent {
+export class WhoAreComponent implements OnInit{
+  ngOnInit(): void {
+    this.titleService.setTitle('Chi Siamo - MediProject')
+  }
+
+  private titleService = inject(Title);
 
 }

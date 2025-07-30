@@ -2,6 +2,7 @@ import { Component, inject, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { ResourcesService } from '../../service/resources.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -23,12 +24,14 @@ import { ResourcesService } from '../../service/resources.service';
 })
 export class HomeComponent implements OnInit {
   private resourcesService = inject(ResourcesService);
+  private titleService = inject(Title);
   resources = this.resourcesService.resources;
 
   public currentImage: any;
   public index = 0;
 
   ngOnInit(): void {
+    this.titleService.setTitle('Home - MediProject')
     this.setImage(this.resources()[this.index]);
     this.index++;
 
