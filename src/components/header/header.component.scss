@@ -37,10 +37,19 @@
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    
 }
 
 .desktop-menu a:hover {
-    color: #add8e6;
+    color: #f99a42;
+}
+
+.desktop-menu .is-active {
+    color: #f99a42;
+}
+
+.mobile-menu .is-active {
+    color: #f99a42;
 }
 
 .hamburger-menu {
@@ -118,11 +127,11 @@
     display: block;
     font-size: 1.5em;
     padding: 10px 0;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .mobile-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    color: #f99a42;
 }
 
 /* Responsive Styles */

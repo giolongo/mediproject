@@ -1,1 +1,17 @@
-{{product | json}}
+<div class="product-container" *ngIf="product">
+    <div class="product-image">
+      <img [src]="product.src" [alt]="product.title" />
+    </div>
+    <div class="product-details">
+      <h1>{{ product.title }}</h1>
+      <p class="description">{{ product.description }}</p>
+      <div class="tech-specs">
+        <h3>Scheda Tecnica</h3>
+        <ul>
+            @for (item of product.techical_data; track $index) {
+                <li> <b>{{item.label}}:</b> {{item.value}}</li>
+            }
+        </ul>
+      </div>
+    </div>
+  </div>

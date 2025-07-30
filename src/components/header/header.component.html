@@ -6,7 +6,7 @@
       <nav class="nav-menu">
         <ul class="desktop-menu">
           @for (item of menu; track $index) {
-            <li><a [routerLink]="item.src">{{item.label}}</a></li>
+            <li><a [routerLink]="item.src" routerLinkActive="is-active">{{item.label}}</a></li>
           }
         </ul>
         <div class="hamburger-menu" (click)="toggleMobileMenu()">
@@ -16,7 +16,7 @@
     <div class="mobile-menu" [class.open]="isMobileMenuOpen">
       <ul>
         @for (item of menu; track $index) {
-          <li><a [routerLink]="item.src" (click)="toggleMobileMenu()">{{item.label}}</a></li>
+          <li><a [routerLink]="item.src" routerLinkActive="is-active" (click)="toggleMobileMenu()">{{item.label}}</a></li>
         }
       </ul>
     </div>
