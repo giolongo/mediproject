@@ -1,0 +1,40 @@
+{
+  "id": 4,
+  "src": "./slider/4.jpg",
+  "title": "Zynera",
+  "description": "Piattaforma automatizzata per analisi ematologiche da laboratorio, che combina tecnologia di citometria a flusso e imaging digitale per eseguire un ampio spettro di test del sangue in modo rapido e preciso. Zynera è progettata per ottimizzare il flusso di lavoro dei laboratori clinici, riducendo gli errori manuali e garantendo risultati affidabili attraverso algoritmi di intelligenza artificiale che interpretano i dati in modo autonomo. Il sistema supporta anche l’integrazione con sistemi informativi ospedalieri (HIS) per una gestione efficiente dei referti.",
+  "technical_data": [
+    {
+      "label": "Tecnologia",
+      "value": "Citometria a flusso combinata con imaging digitale"
+    },
+    {
+      "label": "Parametri analizzati",
+      "value": "Conta cellulare, differenziazione leucocitaria, emoglobina, reticolociti"
+    },
+    {
+      "label": "Capacità di analisi",
+      "value": "Fino a 120 campioni/ora"
+    },
+    {
+      "label": "Software",
+      "value": "Algoritmi AI per analisi automatica e validazione risultati"
+    },
+    {
+      "label": "Integrazione",
+      "value": "Compatibile con sistemi HIS e LIMS"
+    },
+    {
+      "label": "Dimensioni",
+      "value": "70 x 55 x 60 cm, peso 48 kg"
+    },
+    {
+      "label": "Alimentazione",
+      "value": "220V AC, consumo 500W"
+    },
+    {
+      "label": "Certificazioni",
+      "value": "CE 98/79/EC, FDA 510(k)"
+    }
+  ]
+}
