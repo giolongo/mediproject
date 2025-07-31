@@ -17,6 +17,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
       justify-content: center;
       align-items: center;
       font-size: 15px;
+      background-color: #333;
+      color: white;
     }
   `]
 })

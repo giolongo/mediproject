@@ -29,7 +29,8 @@ export class HeaderComponent {
   public menu: MenuModel[] = [
     {label: 'Home', src: '/home'},
     {label: 'Prodotti', src: '/products'},
-    {label: 'Chi Siamo', src: '/about'}
+    {label: 'Chi Siamo', src: '/about'},
+    {label: 'Contattaci', src: '/contact'}
   ]
 
   toggleMobileMenu() {
