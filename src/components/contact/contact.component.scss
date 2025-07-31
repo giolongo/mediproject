@@ -1,0 +1,41 @@
+.contact-card {
+    max-width: 80vw;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 600px) {
+    .contact-card {
+      margin: 10px;
+      padding: 15px;
+    }
+  }
+  
+  .contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .contact-buttons span {
+    margin-right: 10px;
+    font-weight: 500;
+  }
+  
+  .contact-buttons a {
+    text-transform: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-buttons mat-icon {
+    margin-right: 5px;
+  }
+  
