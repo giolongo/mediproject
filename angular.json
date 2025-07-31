@@ -20,7 +20,7 @@
             "outputPath": "docs",
             "baseHref": "/mediproject/",
             "index": "src/index.html",
-            "browser": "src/main.ts",
+            "browser": "",
             "polyfills": [
               "zone.js"
             ],
