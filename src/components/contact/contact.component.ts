@@ -93,7 +93,7 @@ export class ContactComponent {
         {
           panelClass: 'app-notification-success',
           horizontalPosition: 'center',
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
         }
       );
       this.contactForm.reset({ subject: 'Richieste Generali' });
@@ -105,7 +105,7 @@ export class ContactComponent {
         {  
           panelClass: 'app-notification-error',
           horizontalPosition: 'center',
-          verticalPosition: 'top',
+          verticalPosition: 'bottom',
         }
       );
       console.error(err);
