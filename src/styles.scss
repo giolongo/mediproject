@@ -59,6 +59,7 @@ app-product-detail {
 }
 
 .mat-mdc-snack-bar-container {
+  z-index: 99999;
   --mat-mdc-snack-bar-button-color: #ffffff;
   --mdc-snackbar-supporting-text-color: #ffffff;
 
