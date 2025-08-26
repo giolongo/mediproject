@@ -12,6 +12,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import emailjs from 'emailjs-com';
 import { CommonModule } from '@angular/common';
 import { Title } from '@angular/platform-browser';
+import { environment } from '../../environment';
 
 @Component({
   selector: 'app-contact',
@@ -82,10 +83,10 @@ export class ContactComponent {
 
     this.inLoading = true;
     emailjs.send(
-      'emailjs_development',
-      'template_contact',
+      environment.serviceId,
+      environment.templateId,
       emailData,
-      'D2DqsUOfuSRPbrOP1'
+      environment.userId
     ).then(() => {
       this._snackBar.open(
         'Messaggio inviato correttamente, sarai ricontattato da un membro del nostro team!',

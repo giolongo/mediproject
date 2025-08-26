@@ -1,40 +1,52 @@
 {
   "id": 3,
-  "src": "./slider/3.jpg",
-  "title": "Aurex",
-  "description": "Sistema otoscopico digitale di ultima generazione, progettato per fornire esami auricolari ad alta precisione e documentazione visiva in tempo reale. Equipaggiato con una telecamera ad alta definizione e illuminazione LED regolabile, Aurex consente ai medici di individuare patologie dell’orecchio medio e esterno con estrema accuratezza. Il dispositivo integra funzioni di registrazione video e scatto di immagini, facilitando la condivisione dei dati con altri specialisti o l’archiviazione per il follow-up clinico.",
+  "src": "../products/images/Egle12.PNG",
+  "title": "Egle 1 - Egle 2",
+  "description": "Fonte di luce per endoscopi singola e doppia",
   "technical_data": [
     {
-      "label": "Camera",
-      "value": "HD 1080p con zoom ottico 5x"
+      "label": "Luce",
+      "value": "Fonte di luce singola a LED ad altissima potenza"
     },
     {
-      "label": "Illuminazione",
-      "value": "LED regolabile con luce fredda"
+      "label": "Colore",
+      "value": "Temperatura colore LED 6000-6500 K"
+    },
+    {
+      "label": "Microprocessore",
+      "value": "Controllo con scheda a microprocessore 32 bit"
     },
     {
       "label": "Display",
-      "value": "Schermo LCD 5\" integrato"
+      "value": "Diplay a matrice TFT 20x4 caratteri"
     },
     {
-      "label": "Connettività",
-      "value": "Wi-Fi, USB-C per trasferimento dati"
+      "label": "Egle 1 - Intensità",
+      "value": "Regolazione intensità tramite encoder rotativo con memorizzazione del preferito"
     },
     {
-      "label": "Registrazione",
-      "value": "Video e immagini con archiviazione su SD card"
+      "label": "Egle 2 - Intensità",
+      "value": "Regolazione intensità tramite 2 encoder rotativi con memorizzazione per ciascuno"
     },
     {
-      "label": "Autonomia",
-      "value": "Batteria ricaricabile con 3 ore di utilizzo continuo"
+      "label": "Egle 1 - Attacco",
+      "value": "Attacco rapido Storz fibra ottica"
     },
     {
-      "label": "Peso",
-      "value": "350 grammi"
+      "label": "Egle 2 - Attacco",
+      "value": "Doppio attacco rapido Storz fibra ottica"
     },
     {
-      "label": "Certificazioni",
-      "value": "CE 93/42/EEC, FDA 510(k)"
+      "label": "Aattatore",
+      "value": "Adattatore fibra Olimpus a richiesta"
+    },
+    {
+      "label": "Egle 1 - Alimentazione",
+      "value": "Alimentazione 220-240 V 50 Hz 35W"
+    },
+    {
+      "label": "Egle 2 - Alimentazione",
+      "value": "Alimentazione 220-240 V 50 Hz 25W"
     }
   ]
 }
