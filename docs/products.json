@@ -1,31 +1,38 @@
 [
     {
       "id": "1",
-      "src": "./slider/1.jpg",
-      "alt": "Nuvex ",
-      "title": "Nuvex",
-      "description": "Dispositivo portatile per diagnosi ecografica ad alta risoluzione."
+      "src": "./products/images/Asclepio2.PNG",
+      "alt": "Asclepio 2 HD 3.5-3.0",
+      "title": "Asclepio 2 HD 3.5-3.0",
+      "description": "Videonasolaringoscopio"
     },
     {
       "id": "2",
-      "src": "./slider/2.jpg",
-      "alt": "Melmed",
-      "title": "Melmed",
-      "description": "Monitor multiparametrico compatto per terapia intensiva."
+      "src": "./products/images/Aesculapio.png",
+      "alt": "Aesculapio PRO",
+      "title": "Aesculapio PRO",
+      "description": "Colonna per endoscopia"
     },
     {
       "id": "3",
-      "src": "./slider/3.jpg",
-      "alt": "Zynera",
-      "title": "Zynera",
+      "src": "../products/images/Egle12.PNG",
+      "title": "Egle 1 - Egle 2",
+      "alt": "Egle 1 - Egle 2",
       "description": "Sistema otoscopico digitale per esami auricolari ad alta precisione."
     },
     {
       "id": "4",
-      "src": "./slider/4.jpg",
-      "alt": "Aurex",
-      "title": "Aurex",
-      "description": "Piattaforma di analisi ematologica automatizzata da laboratorio."
+      "src": "./products/images/Scopeo.PNG",
+      "title": "Scopeo 2.0",
+      "alt": "Scopeo 2.0",
+      "description": "Software per videoacquisizione medica"
+    },
+    {
+      "id": "5",
+      "src": "./products/images/TheisFHD.PNG",
+      "title": "Theis FHD",
+      "alt": "Theis FHD",
+      "description": "Telecamera per endoscopia"
     }
   ]
   

@@ -1,40 +1,52 @@
 {
   "id": 1,
-  "src": "./slider/1.jpg",
-  "title": "Nuvex",
-  "description": "Dispositivo portatile per diagnosi ecografica ad alta risoluzione, progettato per offrire immagini chiare e dettagliate in tempo reale. Dotato di tecnologia avanzata di imaging a ultrasuoni con trasduttori multi-frequenza, Nuvex permette agli operatori sanitari di effettuare esami ecografici rapidi e precisi, sia in ambito ospedaliero che in contesti di pronto soccorso o visite domiciliari. La sua interfaccia intuitiva e la connettività wireless facilitano la condivisione immediata dei dati con specialisti e archivi digitali, migliorando l’efficienza diagnostica.",
+  "src": "./products/images/Asclepio2.PNG",
+  "title": "Asclepio 2 HD 3.5-3.0",
+  "description": "Videonasolaringoscopio",
   "technical_data": [
     {
-      "label": "Tecnologia di imaging",
-      "value": "Ultrasuoni multi-frequenza (2-15 MHz)"
+      "label": "Design",
+      "value": "Design ergonomico e peso ridotto"
     },
     {
-      "label": "Display",
-      "value": "Touchscreen LCD 10.1\" ad alta definizione"
+      "label": "Risoluzione",
+      "value": "Risoluzione video HD da 1280x720 pixel nativa (720x720 3.0)"
     },
     {
-      "label": "Connettività",
-      "value": "Wi-Fi, Bluetooth, USB"
+      "label": "Compatibilità",
+      "value": "Possibilità visione su smartphone o tablet per visite domiciliari"
     },
     {
-      "label": "Portabilità",
-      "value": "Peso 1.2 kg, batteria integrata con autonomia 4 ore"
+      "label": "Illuminazione",
+      "value": "Sistema di illuminazione a LED integrato"
     },
     {
-      "label": "Software",
-      "value": "Interfaccia user-friendly con supporto AI per analisi automatica"
+      "label": "Bilanciamento",
+      "value": "Bilanciamento del bianco hardware tramite tasto"
     },
     {
-      "label": "Memoria",
-      "value": "Archiviazione locale fino a 5000 immagini e video"
+      "label": "Diametro",
+      "value": "Diametro distale 3,5 mm (3,0 mm 3.0)"
     },
     {
-      "label": "Accessori",
-      "value": "Trasduttori lineari, convessi e endocavitari"
+      "label": "Lunghezza",
+      "value": "Lunghezza tubo di inserimento 380 mm +/- 10%"
     },
     {
-      "label": "Certificazioni",
-      "value": "CE 93/42/EEC, FDA 510(k)"
+      "label": "Orientamento",
+      "value": "Orientamento distale Up/Down ～130°"
+    },
+    {
+      "label": "Alimentazione",
+      "value": "Alimentazione tramite porta USB DC 5V (driver autoinstallante)"
+    },
+    {
+      "label": "Alimentazione",
+      "value": "Grado di protezione IPX4"
+    },
+    {
+      "label": "Classe CE",
+      "value": "CE Classe I (Reg. UE 2017/745) BD/RDM: 2533563/R CND: Z12021006"
     }
   ]
 }
