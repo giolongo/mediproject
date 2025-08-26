@@ -15,7 +15,7 @@
     },
     {
       "id": "3",
-      "src": "../products/images/Egle12.PNG",
+      "src": "./products/images/Egle12.PNG",
       "title": "Egle 1 - Egle 2",
       "alt": "Egle 1 - Egle 2",
       "description": "Sistema otoscopico digitale per esami auricolari ad alta precisione."
