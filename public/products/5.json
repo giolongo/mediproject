@@ -47,6 +47,10 @@
     {
       "label": "CND: ",
       "value": "Z12020405"
+    },
+    {
+      "label": "File",
+      "source": "./products/files/Theis FHD web small.pdf"
     }
   ]
 }
