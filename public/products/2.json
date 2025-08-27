@@ -51,6 +51,10 @@
     {
       "value": "CE Classe I (Reg. UE 2017/745)",
       "label": "CE Classe"
+    },
+    {
+      "label": "File",
+      "source": "./products/files/Aesculapio PRO depliant ita.pdf"
     }
   ]
 }
