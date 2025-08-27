@@ -39,6 +39,10 @@
     {
       "label": "Classe",
       "value": "Classe 1 (Reg . UE 2017/745) BD/RDM: 2510030/R CND: Z12020482"
+    },
+    {
+      "label": "File",
+      "source": "./products/files/Scopeo 2.0 web small.pdf"
     }
   ]
 }

@@ -47,6 +47,10 @@
     {
       "label": "Egle 2 - Alimentazione",
       "value": "Alimentazione 220-240 V 50 Hz 25W"
+    },
+    {
+      "label": "File",
+      "source": "./products/files/Egle 01-02 web small.pdf"
     }
   ]
 }

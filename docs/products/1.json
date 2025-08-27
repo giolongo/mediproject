@@ -47,6 +47,10 @@
     {
       "label": "Classe CE",
       "value": "CE Classe I (Reg. UE 2017/745) BD/RDM: 2533563/R CND: Z12021006"
+    },
+    {
+      "label": "File",
+      "source": "./products/files/Asclepio 2 HD depliant ita.pdf"
     }
   ]
 }
