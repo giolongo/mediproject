@@ -7,6 +7,11 @@
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Numero di Telefono</mat-label>
+            <input matInput formControlName="telephone" required type="text" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
             <mat-label>Email</mat-label>
             <input matInput formControlName="email" required type="email" />
         </mat-form-field>
@@ -42,17 +47,17 @@
 
     <div class="contact-buttons">
         <span>Oppure contattaci direttamente:</span>
-        <a mat-raised-button color="accent" href="https://wa.me/391234567890?text=Ciao%2C%20vorrei%20contattarti"
+        <!-- <a mat-raised-button color="accent" href="https://wa.me/393480089054?text=Ciao%2C%20vorrei%20contattarvi"
             target="_blank" aria-label="WhatsApp">
             <mat-icon>cloud</mat-icon> Whatsapp
-        </a>
+        </a> -->
 
-        <a mat-raised-button color="primary" href="mailto:tuo@email.com" target="_blank" aria-label="Email">
+        <a mat-raised-button color="primary" href="mailto:info@medicontractltd.com" target="_blank" aria-label="Email">
             <mat-icon>email</mat-icon> Email
         </a>
 
-        <a mat-raised-button color="warn" href="tel:+393123456789" aria-label="Telefono">
+        <!-- <a mat-raised-button color="warn" href="tel:+393480089054" aria-label="Telefono">
             <mat-icon>phone</mat-icon> Telefono
-        </a>
+        </a> -->
     </div>
 </mat-card>

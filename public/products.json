@@ -15,20 +15,27 @@
     },
     {
       "id": "3",
-      "src": "./products/images/Egle12.PNG",
-      "title": "Egle 1 - Egle 2",
-      "alt": "Egle 1 - Egle 2",
+      "src": "./products/images/Egle1.png",
+      "title": "Egle 1",
+      "alt": "Egle 1",
       "description": "Sistema otoscopico digitale per esami auricolari ad alta precisione."
     },
     {
       "id": "4",
+      "src": "./products/images/Egle2.png",
+      "title": "Egle 2",
+      "alt": "Egle 2",
+      "description": "Sistema otoscopico digitale per esami auricolari ad alta precisione."
+    },
+    {
+      "id": "5",
       "src": "./products/images/Scopeo.PNG",
       "title": "Scopeo 2.0",
       "alt": "Scopeo 2.0",
       "description": "Software per videoacquisizione medica"
     },
     {
-      "id": "5",
+      "id": "6",
       "src": "./products/images/TheisFHD.PNG",
       "title": "Theis FHD",
       "alt": "Theis FHD",
