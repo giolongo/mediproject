@@ -1,7 +1,7 @@
 {
   "id": 3,
-  "src": "./products/images/Egle12.PNG",
-  "title": "Egle 1 - Egle 2",
+  "src": "./products/images/Egle1.png",
+  "title": "Egle 1",
   "description": "Fonte di luce per endoscopi singola e doppia",
   "technical_data": [
     {
@@ -21,32 +21,20 @@
       "value": "Diplay a matrice TFT 20x4 caratteri"
     },
     {
-      "label": "Egle 1 - Intensità",
+      "label": "Intensità",
       "value": "Regolazione intensità tramite encoder rotativo con memorizzazione del preferito"
     },
     {
-      "label": "Egle 2 - Intensità",
-      "value": "Regolazione intensità tramite 2 encoder rotativi con memorizzazione per ciascuno"
-    },
-    {
-      "label": "Egle 1 - Attacco",
+      "label": "Attacco",
       "value": "Attacco rapido Storz fibra ottica"
-    },
-    {
-      "label": "Egle 2 - Attacco",
-      "value": "Doppio attacco rapido Storz fibra ottica"
     },
     {
       "label": "Aattatore",
       "value": "Adattatore fibra Olimpus a richiesta"
     },
     {
-      "label": "Egle 1 - Alimentazione",
+      "label": "Alimentazione",
       "value": "Alimentazione 220-240 V 50 Hz 35W"
-    },
-    {
-      "label": "Egle 2 - Alimentazione",
-      "value": "Alimentazione 220-240 V 50 Hz 25W"
     },
     {
       "label": "File",

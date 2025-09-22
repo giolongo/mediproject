@@ -1,48 +1,44 @@
 {
-  "id": 4,
-  "src": "./products/images/Scopeo.PNG",
-  "title": "Scopeo 2.0",
-  "description": "Software per videoacquisizione medica",
+  "id": 3,
+  "src": "./products/images/Egle2.PNG",
+  "title": "Egle 2",
+  "description": "Fonte di luce per endoscopi singola e doppia",
   "technical_data": [
     {
-      "label": "Tipologia",
-      "value": "Software di videoacquisizione per telecamere e videoendoscopi"
+      "label": "Luce",
+      "value": "Fonte di luce singola a LED ad altissima potenza"
     },
     {
-      "label": "Archivio",
-      "value": "Gestione archivio pazienti"
+      "label": "Colore",
+      "value": "Temperatura colore LED 6000-6500 K"
     },
     {
-      "label": "Storico",
-      "value": "Storico visite paziente con memorizzazione dei referti e confronto immagini attuali con quelle in archivio"
+      "label": "Microprocessore",
+      "value": "Controllo con scheda a microprocessore 32 bit"
     },
     {
-      "label": "Foto/Vieo",
-      "value": "Estrapolazione foto da video registrati"
+      "label": "Display",
+      "value": "Diplay a matrice TFT 20x4 caratteri"
     },
     {
-      "label": "Editing",
-      "value": "Edit e ritaglio foto"
+      "label": "Intensità",
+      "value": "Regolazione intensità tramite 2 encoder rotativi con memorizzazione per ciascuno"
     },
     {
-      "label": "Regolazione",
-      "value": "Regolazione completa dei parametri dei dispositivi acquisizione immagini"
+      "label": "Attacco",
+      "value": "Doppio attacco rapido Storz fibra ottica"
     },
     {
-      "label": "Riconoscimento pazienti",
-      "value": "Lettore tessera sanitaria e pedaliera acquisizione foto/video opzionali"
+      "label": "Aattatore",
+      "value": "Adattatore fibra Olimpus a richiesta"
     },
     {
-      "label": "Export",
-      "value": "Esportazione referti ed immagini in supporti mobili"
-    },
-    {
-      "label": "Classe",
-      "value": "Classe 1 (Reg . UE 2017/745) BD/RDM: 2510030/R CND: Z12020482"
+      "label": "Alimentazione",
+      "value": "Alimentazione 220-240 V 50 Hz 25W"
     },
     {
       "label": "File",
-      "source": "./products/files/Scopeo 2.0 web small.pdf"
+      "source": "./products/files/Egle 01-02 web small.pdf"
     }
   ]
 }
