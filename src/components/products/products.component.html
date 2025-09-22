@@ -1,6 +1,7 @@
 <div class="product-wrapper">
     @for (product of resources(); track $index) {
-    <mat-card class="product-card" appearance="outlined" @slideInFromLeft>
+    <mat-card class="product-card" appearance="outlined" (click)="detailProduct(product)" 
+        @slideInFromLeft>
         <mat-card-header>
             <div mat-card-avatar class="header-image"></div>
             <mat-card-title>{{product.title}}</mat-card-title>
@@ -12,7 +13,7 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
-            <button (click)="detailProduct(product)" mat-button="filled">Dettagli</button>
+            <button mat-button="filled">Dettagli</button>
         </mat-card-actions>
     </mat-card>
     }
