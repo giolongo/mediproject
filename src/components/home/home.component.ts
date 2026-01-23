@@ -4,9 +4,13 @@ import { trigger, style, animate, transition } from '@angular/animations';
 import { ResourcesService } from '../../service/resources.service';
 import { Title } from '@angular/platform-browser';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

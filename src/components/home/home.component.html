@@ -1,14 +1,51 @@
-<div class="image-container">
-    <!-- Blurred Backdrop -->
-    <div class="backdrop" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src"
-        [style.background-image]="'url(' + currentImage?.src + ')'">
-    </div>
+<div class="home-layout">
+    <!-- Hero Slider Section -->
+    <header class="home-hero">
+        <!-- Background Slider -->
+        <div class="hero-slider">
+            @for (res of resources(); track $index) {
+            <div class="slide" [class.active]="currentImage?.id === res.id"
+                [style.background-image]="'url(' + res.src + ')'">
+            </div>
+            }
+            <div class="hero-overlay"></div>
+        </div>
 
-    <!-- Main Image -->
-    <img class="main-image" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src" [src]="currentImage?.src"
-        [alt]="currentImage?.alt" />
+        <!-- Hero Content -->
+        <div class="hero-content" @fadeAnimation>
+            <h1>Eccellenza Medica <br> <span class="accent-text">A Portata di Mano</span></h1>
+            <p>Soluzioni innovative per il benessere e la cura, progettate per il futuro.</p>
+            <div class="hero-actions">
+                <button mat-raised-button color="primary" class="cta-btn" routerLink="/products">ESPLORA I
+                    PRODOTTI</button>
+                <button mat-stroked-button class="secondary-btn" routerLink="/about">CHI SIAMO</button>
+            </div>
+        </div>
+    </header>
 
-    <div class="sidebar-overlay" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src">
-        {{currentImage?.title}}
-    </div>
+    <!-- Featured Products Teaser -->
+    <section class="home-products-teaser">
+        <div class="section-header">
+            <h2>I Nostri Prodotti</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="teaser-grid">
+            @for (product of resources().slice(0, 3); track $index) {
+            <div class="teaser-card" [routerLink]="['/products', product.id]">
+                <div class="image-wrapper">
+                    <img [src]="product.src" [alt]="product.alt">
+                </div>
+                <div class="teaser-info">
+                    <h4>{{product.title}}</h4>
+                    <span class="link-text">Vedi Dettagli <mat-icon>arrow_forward</mat-icon></span>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="view-all-container">
+            <button mat-button color="primary" routerLink="/products">VEDI TUTTI I PRODOTTI</button>
+        </div>
+    </section>
 </div>
