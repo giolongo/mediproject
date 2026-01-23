@@ -1,56 +1,48 @@
 {
-  "id": 4,
-  "src": "./products/images/TheisFHD.PNG",
-  "title": "Theis FHD",
-  "description": "Telecamera per endoscopia",
+  "id": 6,
+  "src": "./products/images/Scopeo.PNG",
+  "title": "Scopeo 2.0",
+  "description": "Software per videoacquisizione medica",
   "technical_data": [
     {
-      "label": "Sensore",
-      "value": "Sensore ottico SONY full hd (1920*1080 px)"
+      "label": "Tipologia",
+      "value": "Software di videoacquisizione per telecamere e videoendoscopi"
     },
     {
-      "label": "Filtro",
-      "value": "Filtro IR integrato"
+      "label": "Archivio",
+      "value": "Gestione archivio pazienti"
     },
     {
-      "label": "Compatibilità",
-      "value": "Compatibile con tutti gli obiettivi passo 'C'"
+      "label": "Storico",
+      "value": "Storico visite paziente con memorizzazione dei referti e confronto immagini attuali con quelle in archivio"
     },
     {
-      "label": "Peso",
-      "value": "Peso 70 gr. senza obiettivo"
+      "label": "Foto/Vieo",
+      "value": "Estrapolazione foto da video registrati"
     },
     {
-      "label": "Dettagli",
-      "value": "Corpo in ABS"
+      "label": "Editing",
+      "value": "Edit e ritaglio foto"
     },
     {
-      "label": "Connessione",
-      "value": "Connessione USB 3.0 (driver autoinstallante)"
+      "label": "Regolazione",
+      "value": "Regolazione completa dei parametri dei dispositivi acquisizione immagini"
     },
     {
-      "label": "Obiettivo",
-      "value": "Obiettivo a scelta tra 18 e 26 mm (Disponibilità obiettivo varifocal (18-35 mm)."
+      "label": "Riconoscimento pazienti",
+      "value": "Lettore tessera sanitaria e pedaliera acquisizione foto/video opzionali"
     },
     {
-      "label": "Compatibilità con sistemi di microscopia",
-      "value": "SI"
+      "label": "Export",
+      "value": "Esportazione referti ed immagini in supporti mobili"
     },
     {
       "label": "Classe",
-      "value": "Classe 1 (Reg . UE 2017/745)"
-    },
-    {
-      "label": "BD/RDM",
-      "value": "2509544/R"
-    },
-    {
-      "label": "CND: ",
-      "value": "Z12020405"
+      "value": "Classe 1 (Reg . UE 2017/745) BD/RDM: 2510030/R CND: Z12020482"
     },
     {
       "label": "File",
-      "source": "./products/files/Theis FHD web small.pdf"
+      "source": "./products/files/Scopeo 2.0 web small.pdf"
     }
   ]
 }
