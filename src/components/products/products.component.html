@@ -1,15 +1,16 @@
 <div class="product-wrapper">
     @for (product of resources(); track $index) {
-    <mat-card class="product-card" appearance="outlined" (click)="detailProduct(product)" 
-        @slideInFromLeft>
+    <mat-card class="product-card" appearance="outlined" (click)="detailProduct(product)" @slideInFromLeft>
         <mat-card-header>
             <div mat-card-avatar class="header-image"></div>
             <mat-card-title>{{product.title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="product.src" [alt]="product.alt">
+        <div class="image-container">
+            <img [src]="product.src" [alt]="product.alt">
+        </div>
         <mat-card-content>
             <p>
-                {{product.description}} 
+                {{product.description}}
             </p>
         </mat-card-content>
         <mat-card-actions>

@@ -1,6 +1,13 @@
 <div class="image-container">
-    <img *ngIf="currentImage" [@fadeAnimation]="currentImage?.src" [src]="currentImage?.src"
+    <!-- Blurred Backdrop -->
+    <div class="backdrop" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src"
+        [style.background-image]="'url(' + currentImage?.src + ')'">
+    </div>
+
+    <!-- Main Image -->
+    <img class="main-image" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src" [src]="currentImage?.src"
         [alt]="currentImage?.alt" />
+
     <div class="sidebar-overlay" *ngIf="currentImage" [@fadeAnimation]="currentImage?.src">
         {{currentImage?.title}}
     </div>
