@@ -73,32 +73,37 @@ $bg-visual: #f7f7f7;
 }
 
 // Right Column: Content
+// Right Column: Content (Card Style)
 .pd-content {
-  padding: 80px 60px;
-  max-width: 700px;
-  margin: 0 auto;
+  padding: 60px 50px;
+  max-width: 750px;
+  margin: 60px 40px 60px 0; // Margin from right/top/bottom, 0 left (grid handles gap)
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06); // Soft cinematic shadow
 
   @media (max-width: 960px) {
-    padding: 40px 24px;
+    margin: 0 20px 40px; // Centered card on mobile/tablet
+    padding: 40px 30px;
+    width: auto;
   }
 
-  // Mobile Optimization
   @media (max-width: 768px) {
-    padding: 30px 20px; // Reduced padding
+    padding: 30px 20px;
+    margin: 0 15px 30px;
   }
 
   header {
     margin-bottom: 40px;
 
     h1 {
-      font-size: 3.5rem;
+      font-size: 3rem; // Slightly smaller to fit card
       font-weight: 700;
       color: $text-dark;
       line-height: 1.1;
       margin: 0 0 20px 0;
       letter-spacing: -0.02em;
 
-      // Mobile Typography
       @media (max-width: 768px) {
         font-size: 2.2rem;
       }

@@ -1,8 +1,9 @@
 import { Component, AfterViewInit, ElementRef, QueryList, ViewChildren, inject, OnInit } from '@angular/core';
 import { ResourcesService } from '../../service/resources.service';
 import { CommonModule } from '@angular/common';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ResourceModel } from '../../app/models/resource.model';
 import { Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
   animations: [
@@ -23,7 +24,7 @@ import { Title } from '@angular/platform-browser';
     ])
   ]
 })
-export class ProductsComponent implements OnInit{
+export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle('Prodotti - MediProject')
   }
@@ -33,7 +34,7 @@ export class ProductsComponent implements OnInit{
   private router = inject(Router);
   resources = this.resourcesService.resources;
 
-  public detailProduct(product: ResourceModel){
+  public detailProduct(product: ResourceModel) {
     console.log(product)
     this.router.navigate(['/products', product.id]);
   }
