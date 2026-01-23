@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, inject, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import emailjs from 'emailjs-com';
 import { CommonModule } from '@angular/common';
@@ -27,9 +28,17 @@ import { environment } from '../../environment';
     MatProgressSpinnerModule,
     MatCardModule,],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+  animations: [
+    trigger('slideInFromLeft', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-30px)' }),
+        animate('700ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ])
+  ]
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent implements OnInit {
 
   fb = inject(FormBuilder);
   private _snackBar = inject(MatSnackBar);
@@ -67,7 +76,7 @@ export class ContactComponent implements OnInit{
   }
 
   private validateCaptcha(control: AbstractControl) {
-    if(this.captchaA != null && this.captchaB != null){
+    if (this.captchaA != null && this.captchaB != null) {
       const correct = this.captchaA + this.captchaB;
       return +control.value === correct ? null : { invalidCaptcha: true };
     }
@@ -96,8 +105,6 @@ export class ContactComponent implements OnInit{
       message: formattedMessage,
     };
 
-    console.log(formattedMessage);
-
     this.setRandomCaptcha();
 
     this.inLoading = true;
@@ -118,20 +125,20 @@ export class ContactComponent implements OnInit{
       );
       this.contactForm.reset({ subject: 'Richieste Generali' });
     })
-    .catch((err) => {
-      this._snackBar.open(
-        'Messaggio non inviato, riprova tra qualche minuto!',
-        'OK!',
-        {  
-          panelClass: 'app-notification-error',
-          horizontalPosition: 'center',
-          verticalPosition: 'bottom',
-        }
-      );
-      console.error(err);
-    })
-    .finally(() => {
-      this.inLoading = false;
-    });
+      .catch((err) => {
+        this._snackBar.open(
+          'Messaggio non inviato, riprova tra qualche minuto!',
+          'OK!',
+          {
+            panelClass: 'app-notification-error',
+            horizontalPosition: 'center',
+            verticalPosition: 'bottom',
+          }
+        );
+        console.error(err);
+      })
+      .finally(() => {
+        this.inLoading = false;
+      });
   }
 }

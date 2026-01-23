@@ -1,41 +1,174 @@
-.contact-card {
-    max-width: 80vw;
-    margin: 20px auto;
-    padding: 20px;
-  }
-  
-  .full-width {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 600px) {
-    .contact-card {
-      margin: 10px;
-      padding: 15px;
+@use 'sass:color';
+
+// Variables
+$primary-color: #007185;
+$accent-color: #f99a42;
+$text-dark: #1a1a1a;
+$text-light: #565959;
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.contact-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fdfdfd;
+}
+
+// Hero Section
+.contact-hero {
+  height: 45vh;
+  min-height: 350px;
+  position: relative;
+  background-color: #2c3e50;
+  background-image: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%); // Professional blue-grey gradient
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding-bottom: 60px; // Space for overlap
+
+  .hero-content {
+    z-index: 2;
+    padding: 0 20px;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      font-weight: 300;
     }
   }
-  
-  .contact-buttons {
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 250px;
+  }
+}
+
+// Floating Card
+.contact-content-card {
+  max-width: 800px;
+  width: 90%;
+  margin: -80px auto 80px; // Desktop Overlap
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 10;
+
+  // Mobile Optimizations (Safe Margins)
+  @media (max-width: 1024px) {
+    box-sizing: border-box;
+    width: auto;
+    margin: -40px 20px 40px 20px;
+    padding: 30px 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .card-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $text-dark;
+      margin: 0 0 15px 0;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .divider {
+      width: 60px;
+      height: 4px;
+      background-color: $accent-color;
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+  }
+
+  // Form Styling
+  form {
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    .full-width {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      height: 50px;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  // Footer / Alternate contacts
+  .contact-footer {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: 20px;
+    color: $text-light;
+
+    span {
+      font-size: 0.95rem;
+    }
+
+    .direct-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $primary-color;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+
+      &:hover {
+        color: color.adjust($primary-color, $lightness: -10%);
+        text-decoration: underline;
+      }
+    }
   }
-  
-  .contact-buttons span {
-    margin-right: 10px;
-    font-weight: 500;
-  }
-  
-  .contact-buttons a {
-    text-transform: none;
-    display: flex;
-    align-items: center;
-  }
-  
-  .contact-buttons mat-icon {
-    margin-right: 5px;
-  }
-  
+}
