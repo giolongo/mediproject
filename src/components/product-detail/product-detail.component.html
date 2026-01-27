@@ -2,39 +2,45 @@
   <!-- Left Column: Visual -->
   <aside class="pd-visual">
     <div class="sticky-wrapper">
-      <img [src]="product.src" [alt]="product.title" />
+      <img [src]="product.files[0].location" [alt]="product.name" />
     </div>
   </aside>
 
   <!-- Right Column: Content -->
   <article class="pd-content">
     <header>
-      <h1>{{ product.title }}</h1>
+      <h1>{{ product.name }}</h1>
       <div class="divider"></div>
     </header>
 
     <section class="description">
-      {{ product.description }}
+      {{ product.name }}
     </section>
 
     <section class="specs">
       <h2>Specifiche Tecniche</h2>
 
       <div class="spec-grid">
-        @for (item of product.technical_data; track $index) {
+        @for (item of product.details; track $index) {
         <div class="spec-card">
           <span class="label">{{item.label}}</span>
           <div class="value">
-            @if(item.value) {
-            {{item.value}}
-            } @else {
-            <a [href]="item.source" target="_blank" class="download-link">
+            @if(item.description) {
+            {{item.description}}
+            }
+          </div>
+        </div>
+        }
+        <div class="spec-card">
+          <span class="label">Scheda PDF</span>
+          <div class="value">
+            @if(product.files.length > 0) {
+            <a [href]="product.files[1].location" target="_blank" class="download-link">
               <span class="material-icons">download</span> Scheda PDF
             </a>
             }
           </div>
         </div>
-        }
       </div>
     </section>
   </article>

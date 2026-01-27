@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ResourceDetailModel } from '../../app/models/resource-detail.model';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Title } from '@angular/platform-browser';
+import { ResourceModel } from '../../app/models/resource.model';
 
 @Component({
   selector: 'app-product-detail',
@@ -21,25 +22,25 @@ import { Title } from '@angular/platform-browser';
     ])
   ]
 })
-export class ProductDetailComponent implements OnInit{
+export class ProductDetailComponent implements OnInit {
 
   private resourceRestService = inject(ResourceRestService);
   private router = inject(Router);
   private titleService = inject(Title);
 
-  public product?: ResourceDetailModel;
+  public product?: ResourceModel;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    if(!id){
+    if (!id) {
       this.router.navigate(['/home']);
       throw new Error("Id not valid");
     }
     this.resourceRestService.getResource(id).pipe(take(1)).subscribe((product) => {
       this.product = product;
-      this.titleService.setTitle(`${product.title} - MediProject`)
+      this.titleService.setTitle(`${product.name} - MediProject`)
     })
   }
 }
