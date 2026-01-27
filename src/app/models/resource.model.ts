@@ -1,6 +1,7 @@
 export interface ResourceModel {
     id: string;
     name: string;
+    description: string;
     priority: number;
     details: {
         id: number;
