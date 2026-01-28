@@ -14,14 +14,20 @@
             @for (product of resources(); track $index) {
             <div class="product-card" (click)="detailProduct(product)">
                 <div class="image-container">
-                    <img [src]="product.src" [alt]="product.alt">
+                    @if(product.files.length > 0) {
+                    <img [src]="(product.files | fileByType: 'image')?.location" [alt]="product.name">
+                    }
                 </div>
                 <div class="card-body">
                     <div class="card-header">
-                        <h3>{{product.title}}</h3>
+                        <h3>{{product.name}}</h3>
                     </div>
                     <div class="divider"></div>
-                    <p>{{product.description}}</p>
+                    <p>
+                        @if(product.details.length > 0) {
+                        {{product.details[0].description}}
+                        }
+                    </p>
                     <div class="card-actions">
                         <span class="details-link">Scopri di più <mat-icon>arrow_forward</mat-icon></span>
                     </div>

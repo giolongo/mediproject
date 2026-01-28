@@ -1,17 +1,18 @@
 export interface ResourceModel {
-    id: string;
+    id?: string;
     name: string;
     description: string;
     priority: number;
     details: {
-        id: number;
+        id?: number;
         label: string;
         description: string;
     }[];
-    files: {
-        id: number;
-        name: string;
-        location: string;
-        type: 'pdf' | 'image';
-    }[];
+    files?: ResourceFileModel[];
+}
+
+export interface ResourceFileModel {
+    id: number;
+    name: string;
+    location: string;
 }

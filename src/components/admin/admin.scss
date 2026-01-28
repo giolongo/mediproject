@@ -1,0 +1,33 @@
+.admin-container {
+    padding: 32px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    .title-group {
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        p {
+            margin: 4px 0 0;
+            color: #666;
+        }
+    }
+
+    .actions {
+        display: flex;
+        gap: 16px;
+    }
+}
+
+table {
+    width: 100%;
+}

@@ -2,7 +2,7 @@
   <!-- Left Column: Visual -->
   <aside class="pd-visual">
     <div class="sticky-wrapper">
-      <img [src]="product.files[0].location" [alt]="product.name" />
+      <img [src]="(product.files | fileByType: 'image')?.location" [alt]="product.name" />
     </div>
   </aside>
 
@@ -35,7 +35,7 @@
           <span class="label">Scheda PDF</span>
           <div class="value">
             @if(product.files.length > 0) {
-            <a [href]="product.files[1].location" target="_blank" class="download-link">
+            <a [href]="(product.files | fileByType: 'pdf')?.location" target="_blank" class="download-link">
               <span class="material-icons">download</span> Scheda PDF
             </a>
             }

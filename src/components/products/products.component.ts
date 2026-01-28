@@ -8,11 +8,12 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { ResourceModel } from '../../app/models/resource.model';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
+import { FileByTypePipe } from "../../pipes/file-by-type-pipe";
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, FileByTypePipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
   animations: [

@@ -3,14 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ResourceRestService } from '../../service/resource.rest.service';
 import { take } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { ResourceDetailModel } from '../../app/models/resource-detail.model';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Title } from '@angular/platform-browser';
 import { ResourceModel } from '../../app/models/resource.model';
+import { FileByTypePipe } from "../../pipes/file-by-type-pipe";
 
 @Component({
   selector: 'app-product-detail',
-  imports: [CommonModule],
+  imports: [CommonModule, FileByTypePipe],
   templateUrl: './product-detail.component.html',
   styleUrl: './product-detail.component.scss',
   animations: [

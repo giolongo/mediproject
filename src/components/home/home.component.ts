@@ -8,10 +8,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { ResourceModel } from '../../app/models/resource.model';
+import { FileByTypePipe } from "../../pipes/file-by-type-pipe";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, FileByTypePipe],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -30,6 +31,7 @@ import { ResourceModel } from '../../app/models/resource.model';
 export class HomeComponent implements OnInit {
   private resourcesService = inject(ResourcesService);
   private titleService = inject(Title);
+  private fileByTypePipe = inject(FileByTypePipe);
   resources = this.resourcesService.resources;
 
   public currentImage: any;
@@ -72,7 +74,7 @@ export class HomeComponent implements OnInit {
   private setImage(product: ResourceModel): void {
     this.currentImage = {
       ...product,
-      src: product.files[0].location,
+      src: this.fileByTypePipe.transform(product?.files ?? [], 'image')?.location,
       original: product // salva l'originale per eventuale resize
     };
   }
