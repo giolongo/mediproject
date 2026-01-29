@@ -4,5 +4,4 @@ export const environment = {
   templateId: 'template_contact',
   userId: 'D2DqsUOfuSRPbrOP1',
   api: 'https://mediproject.onrender.com'
-
 };
