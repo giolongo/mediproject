@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, HostListener } from '@angular/core';
+import { Component, inject, OnInit, HostListener, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { ResourcesService } from '../../service/resources.service';
@@ -7,10 +7,12 @@ import { Title } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
+import { ResourceModel } from '../../app/models/resource.model';
+import { FileByTypePipe } from "../../pipes/file-by-type-pipe";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, FileByTypePipe],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -29,15 +31,25 @@ import { RouterModule } from '@angular/router';
 export class HomeComponent implements OnInit {
   private resourcesService = inject(ResourcesService);
   private titleService = inject(Title);
+  private fileByTypePipe = inject(FileByTypePipe);
   resources = this.resourcesService.resources;
 
   public currentImage: any;
   public index = 0;
 
+  constructor() {
+    effect(() => {
+      this.index++;
+      if (this.index >= this.resources().length) {
+        this.index = 0;
+      }
+      this.setImage(this.resources()[this.index]);
+    })
+  }
+
+
   ngOnInit(): void {
     this.titleService.setTitle('Home - MediProject')
-    this.setImage(this.resources()[this.index]);
-    this.index++;
 
     setInterval(() => {
       this.currentImage = null;
@@ -59,25 +71,11 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private isMobilePortrait(): boolean {
-    return window.innerWidth <= 768 && window.innerHeight > window.innerWidth;
-  }
-
-  private getImageVariant(src: string): string {
-    const ext = src.split('.').pop();
-    const base = src.replace(/\.\w+$/, '');
-    if (this.isMobilePortrait()) {
-      return `${base}_v.${ext}`;
-    }
-    return `${base}.${ext}`;
-  }
-
-  private setImage(image: any): void {
-    const newSrc = this.getImageVariant(image.src);
+  private setImage(product: ResourceModel): void {
     this.currentImage = {
-      ...image,
-      src: newSrc,
-      original: image // salva l'originale per eventuale resize
+      ...product,
+      src: this.fileByTypePipe.transform(product?.files ?? [], 'image')?.location,
+      original: product // salva l'originale per eventuale resize
     };
   }
 }

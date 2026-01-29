@@ -1,0 +1,99 @@
+<h2 mat-dialog-title>{{ data ? 'Modifica' : 'Aggiungi' }} Prodotto</h2>
+<mat-dialog-content style="padding: 10px;" [formGroup]="form">
+
+    <div class="form-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Descrizione</mat-label>
+            <textarea matInput formControlName="description" rows="3"></textarea>
+        </mat-form-field>
+    </div>
+
+    <h3>Dettagli</h3>
+
+    <div formArrayName="details">
+        @for (detail of details.controls; track detail) {
+        <div class="detail-container" [formGroupName]="$index">
+            <mat-form-field appearance="outline">
+                <mat-label>Etichetta</mat-label>
+                <input matInput formControlName="label">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Descrizione</mat-label>
+                <input matInput formControlName="description">
+            </mat-form-field>
+            <button mat-icon-button color="warn" type="button" (click)="removeDetail($index)">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        }
+        <button mat-button color="primary" type="button" (click)="addDetail()">
+            Aggiungi dettaglio <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <h3>File</h3>
+    <div class="file-container">
+
+        <div style="display: flex; flex-direction: column; gap: 10px; flex:1">
+            <h3>Immagine</h3>
+            @if((data?.files ?? [] | fileByType: 'image')?.location) {
+            <a [href]="(data?.files ?? [] | fileByType: 'image')?.location" target="_blank" alt="Preview" class="thumb">
+                Visaulizza immagine attuale
+            </a>
+            }
+            @if(imageFile?.value) {
+            <div class="file-preview">
+                <span>{{imageFile?.value?.name}}</span>
+                <button mat-icon-button color="warn" (click)="imageFile?.setValue(null)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            } @else {
+            <input type="file" #imgInput (change)="onFileSelected($event, 'image')" accept="image/*"
+                style="display: none">
+            <button mat-stroked-button (click)="imgInput.click()">
+                <mat-icon>image</mat-icon> Upload Image
+            </button>
+            }
+        </div>
+
+
+        <div style="display: flex; flex-direction: column; gap: 10px; flex:1">
+            <h3>Foglio Tecnico</h3>
+            @if((data?.files ?? [] | fileByType: 'pdf')?.location) {
+            <a [href]="(data?.files ?? [] | fileByType: 'pdf')?.location" target="_blank" alt="Preview" class="thumb">
+                Visaulizza foglio tecnico attuale
+            </a>
+            }
+            @if(pdfFile?.value) {
+            <div class="file-preview">
+                <span>{{pdfFile?.value?.name}}</span>
+                <button mat-icon-button color="warn" (click)="pdfFile?.setValue(null)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            } @else {
+            <input type="file" #pdfInput (change)="onFileSelected($event, 'pdf')" accept="application/pdf"
+                style="display: none">
+            <button mat-stroked-button (click)="pdfInput.click()">
+                <mat-icon>description</mat-icon> Upload PDF
+            </button>
+            }
+        </div>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Annulla</button>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid || isSaving()">
+        @if (isSaving()) {
+        Salvataggio in corso...
+        } @else {
+        Salva
+        }
+    </button>
+</mat-dialog-actions>

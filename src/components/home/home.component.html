@@ -5,7 +5,7 @@
         <div class="hero-slider">
             @for (res of resources(); track $index) {
             <div class="slide" [class.active]="currentImage?.id === res.id"
-                [style.background-image]="'url(' + res.src + ')'">
+                [style.background-image]="'url(' + (res.files | fileByType: 'image')?.location + ')'">
             </div>
             }
             <div class="hero-overlay"></div>
@@ -34,10 +34,10 @@
             @for (product of resources().slice(0, 3); track $index) {
             <div class="teaser-card" [routerLink]="['/products', product.id]">
                 <div class="image-wrapper">
-                    <img [src]="product.src" [alt]="product.alt">
+                    <img [src]="(product?.files | fileByType: 'image')?.location" [alt]="product.name">
                 </div>
                 <div class="teaser-info">
-                    <h4>{{product.title}}</h4>
+                    <h4>{{product.name}}</h4>
                     <span class="link-text">Vedi Dettagli <mat-icon>arrow_forward</mat-icon></span>
                 </div>
             </div>
