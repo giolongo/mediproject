@@ -14,7 +14,7 @@
             @for (product of resources(); track $index) {
             <div class="product-card" (click)="detailProduct(product)">
                 <div class="image-container">
-                    @if(product.files.length > 0) {
+                    @if(product.files && product.files.length > 0) {
                     <img [src]="(product.files | fileByType: 'image')?.location" [alt]="product.name">
                     }
                 </div>

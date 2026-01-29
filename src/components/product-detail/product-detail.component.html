@@ -34,7 +34,7 @@
         <div class="spec-card">
           <span class="label">Scheda PDF</span>
           <div class="value">
-            @if(product.files.length > 0) {
+            @if(product.files && product.files.length > 0) {
             <a [href]="(product.files | fileByType: 'pdf')?.location" target="_blank" class="download-link">
               <span class="material-icons">download</span> Scheda PDF
             </a>

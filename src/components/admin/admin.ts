@@ -24,7 +24,7 @@ export class AdminComponent {
     displayedColumns: string[] = ['name', 'priority', 'actions'];
 
     deleteResource(id: string) {
-        if (confirm('Are you sure you want to delete this product?')) {
+        if (confirm('Sicuro di vole eliminare il prodotto?')) {
             this.resourcesService.deleteResource(id);
         }
     }

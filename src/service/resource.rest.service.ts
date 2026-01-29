@@ -60,8 +60,7 @@ export class ResourceRestService {
   }
 
   public deleteResource(id: string): Observable<void> {
-    console.log('MOCK DELETE:', id);
-    return of(undefined);
+    return this.http.delete<void>(`${environment.api}/product/${id}`);
   }
 
   public uploadFiles(files: File[], id: string): Observable<ResourceModel> {
