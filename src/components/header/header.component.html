@@ -1,23 +1,26 @@
 <header class="header">
-    <div class="container">
-      <div class="logo-container">
-        <img routerLink="/home" src="./logo.png" alt="Logo" class="logo">
-      </div>
-      <nav class="nav-menu">
-        <ul class="desktop-menu">
-          @for (item of menu; track $index) {
-            <li><a [routerLink]="item.src" routerLinkActive="is-active">{{item.label}}</a></li>
-          }
-        </ul>
-        <div class="hamburger-menu" (click)="toggleMobileMenu()">
-          <ng-container *ngIf="!isMobileMenuOpen">&#9776;</ng-container> <ng-container *ngIf="isMobileMenuOpen">&#10006;</ng-container> </div>
-      </nav>
+  <div class="container">
+    <div class="logo-container">
+      <img routerLink="/home" src="./logo.png" alt="Logo" class="logo">
+      <p class="tagline">Innovative Medical Device</p>
     </div>
-    <div class="mobile-menu" [class.open]="isMobileMenuOpen">
-      <ul>
+    <nav class="nav-menu">
+      <ul class="desktop-menu">
         @for (item of menu; track $index) {
-          <li><a [routerLink]="item.src" routerLinkActive="is-active" (click)="toggleMobileMenu()">{{item.label}}</a></li>
+        <li><a [routerLink]="item.src" routerLinkActive="is-active">{{item.label}}</a></li>
         }
       </ul>
-    </div>
-  </header>
+      <div class="hamburger-menu" (click)="toggleMobileMenu()">
+        <ng-container *ngIf="!isMobileMenuOpen">&#9776;</ng-container> <ng-container
+          *ngIf="isMobileMenuOpen">&#10006;</ng-container>
+      </div>
+    </nav>
+  </div>
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <ul>
+      @for (item of menu; track $index) {
+      <li><a [routerLink]="item.src" routerLinkActive="is-active" (click)="toggleMobileMenu()">{{item.label}}</a></li>
+      }
+    </ul>
+  </div>
+</header>
