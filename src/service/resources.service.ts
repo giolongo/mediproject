@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { ResourceModel } from '../app/models/resource.model';
 import { ResourceRestService } from './resource.rest.service';
-import { of, switchMap } from 'rxjs';
+import { of, switchMap, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,33 +12,44 @@ export class ResourcesService {
   public resources = signal<ResourceModel[]>([]);
 
   constructor() {
+    this.loadResources();
+  }
+
+  public loadResources() {
     this.resourceRestService.getResources().subscribe((resources) => {
-      this.resources.set(resources)
+      this.resources.set(resources.sort((a, b) => a.priority - b.priority));
     });
   }
 
-  public deleteResource(id: string) {
-    this.resourceRestService.deleteResource(id).subscribe(() => {
-      this.resources.update(resources => resources.filter(r => r.id !== id));
-    });
+  public deleteResource(id: number) {
+    return this.resourceRestService.deleteResource(id).pipe(
+      tap(() => {
+        this.loadResources();
+      })
+    );
   }
 
   public addResource(resource: ResourceModel, files: File[]) {
-    this.resourceRestService.createResource(resource).pipe(switchMap((newResource) => {
-      if (newResource?.id != undefined) {
+    return this.resourceRestService.createResource(resource).pipe(switchMap((newResource) => {
+      if (newResource?.id != undefined && files && files.length > 0) {
         return this.resourceRestService.uploadFiles(files, newResource.id);
       }
       return of(newResource);
-    })).subscribe(newResource => {
-      this.resources.update(resources => [...resources, newResource]);
-    });
+    }), tap(() => {
+      this.loadResources();
+    }));
   }
 
-  public updateResource(resource: ResourceModel, id: string, files: File[]) {
-    this.resourceRestService.updateResource(resource, id).pipe(switchMap(() => {
-      return this.resourceRestService.uploadFiles(files, id);
-    })).subscribe(updated => {
-      this.resources.update(resources => resources.map(r => r.id === updated.id ? updated : r));
-    });
+  public updateResource(resource: ResourceModel, id: number, files: File[], skipReload: boolean = false) {
+    return this.resourceRestService.updateResource(resource, id).pipe(switchMap((res) => {
+      if (files && files.length > 0) {
+        return this.resourceRestService.uploadFiles(files, id);
+      }
+      return of(res);
+    }), tap(() => {
+      if (!skipReload) {
+        this.loadResources();
+      }
+    }));
   }
 }

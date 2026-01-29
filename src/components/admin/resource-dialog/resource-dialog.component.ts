@@ -1,4 +1,5 @@
-import { Component, Inject, inject } from '@angular/core';
+import { Component, Inject, inject, signal } from '@angular/core';
+import { finalize } from 'rxjs';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators, FormArray } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -9,6 +10,7 @@ import { ResourceModel } from '../../../app/models/resource.model';
 import { ResourceRestService } from '../../../service/resource.rest.service';
 import { FileByTypePipe } from "../../../pipes/file-by-type-pipe";
 import { ResourcesService } from '../../../service/resources.service';
+import { ToastService } from '../../../service/toast.service';
 
 @Component({
     selector: 'app-resource-dialog',
@@ -29,11 +31,11 @@ export class ResourceDialogComponent {
     private fb = inject(NonNullableFormBuilder);
     private dialogRef = inject(MatDialogRef<ResourceDialogComponent>);
     private resourcesService = inject(ResourcesService);
+    private toastService = inject(ToastService);
 
     constructor(@Inject(MAT_DIALOG_DATA) public data: ResourceModel | undefined) {
         if (data) {
             this.form.patchValue({
-                id: data.id,
                 name: data.name,
                 description: data.description || '',
                 priority: data.priority
@@ -43,11 +45,10 @@ export class ResourceDialogComponent {
     }
 
     form = this.fb.group({
-        id: [''],
         name: ['', Validators.required],
         description: ['', Validators.required],
         priority: [0, Validators.required],
-        details: this.fb.array<{ id: number, label: string, description: string }>([]),
+        details: this.fb.array<{ label: string, description: string }>([]),
         image: this.fb.control<File | null>(null),
         pdf: this.fb.control<File | null>(null)
     });
@@ -64,8 +65,9 @@ export class ResourceDialogComponent {
         return this.form.get('pdf');
     }
 
-    addDetail(detail?: { label: string, description: string }) {
+    addDetail(detail?: { id?: number, label: string, description: string }) {
         this.details.push(this.fb.group({
+            id: [detail?.id],
             label: [detail?.label || '', Validators.required],
             description: [detail?.description || '', Validators.required]
         }));
@@ -96,29 +98,56 @@ export class ResourceDialogComponent {
         }
     }
 
+    isSaving = signal(false);
+
     save() {
+        console.log('Save called');
+        console.log('Form valid:', this.form.valid);
+        console.log('Form value:', this.form.getRawValue());
+
         if (this.form.valid) {
+            this.isSaving.set(true);
             const raw = this.form.getRawValue();
             const files: any[] = [];
             if (raw.image) files.push(raw.image);
             if (raw.pdf) files.push(raw.pdf);
 
+            console.log('Files to upload:', files);
+
             const result: ResourceModel = {
                 name: raw.name,
                 description: raw.description,
                 priority: Number(raw.priority),
-                details: raw.details.map((detail) => ({
+                details: raw.details.map((detail: any) => ({
                     label: detail.label,
                     description: detail.description
                 })),
             };
 
-            if (raw.id?.trim() != '') {
-                this.resourcesService.updateResource(result, raw.id, files);
-            } else {
-                this.resourcesService.addResource(result, files);
-            }
+            console.log('Resource to save:', result);
+            console.log('ID:', this.data?.id);
 
+            const operation = this.data?.id != null
+                ? this.resourcesService.updateResource(result, this.data.id, files)
+                : this.resourcesService.addResource(result, files);
+
+            console.log('Subscribing to operation...');
+            operation.pipe(finalize(() => {
+                console.log('Finalize called');
+                this.isSaving.set(false);
+            })).subscribe({
+                next: (res) => {
+                    console.log('Operation successful', res);
+                    this.toastService.success('Operazione completata con successo');
+                    this.dialogRef.close();
+                },
+                error: (err) => {
+                    console.error('Operation failed', err);
+                    this.toastService.error('Errore durante il salvataggio');
+                }
+            });
+        } else {
+            console.warn('Form is invalid', this.form.errors);
         }
     }
 }

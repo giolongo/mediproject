@@ -1,5 +1,5 @@
 export interface ResourceModel {
-    id?: string;
+    id?: number;
     name: string;
     description: string;
     priority: number;

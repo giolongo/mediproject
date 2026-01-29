@@ -1,13 +1,13 @@
-<h2 mat-dialog-title>{{ data ? 'Edit' : 'Add' }} Product</h2>
+<h2 mat-dialog-title>{{ data ? 'Modifica' : 'Aggiungi' }} Prodotto</h2>
 <mat-dialog-content style="padding: 10px;" [formGroup]="form">
 
     <div class="form-container">
         <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
+            <mat-label>Nome</mat-label>
             <input matInput formControlName="name">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Description</mat-label>
+            <mat-label>Descrizione</mat-label>
             <textarea matInput formControlName="description" rows="3"></textarea>
         </mat-form-field>
     </div>
@@ -15,14 +15,14 @@
     <h3>Dettagli</h3>
 
     <div formArrayName="details">
-        @for (detail of details.controls; track $index) {
+        @for (detail of details.controls; track detail) {
         <div class="detail-container" [formGroupName]="$index">
             <mat-form-field appearance="outline">
-                <mat-label>Label</mat-label>
+                <mat-label>Etichetta</mat-label>
                 <input matInput formControlName="label">
             </mat-form-field>
             <mat-form-field appearance="outline">
-                <mat-label>Description</mat-label>
+                <mat-label>Descrizione</mat-label>
                 <input matInput formControlName="description">
             </mat-form-field>
             <button mat-icon-button color="warn" type="button" (click)="removeDetail($index)">
@@ -40,9 +40,11 @@
 
         <div style="display: flex; flex-direction: column; gap: 10px; flex:1">
             <h3>Immagine</h3>
+            @if((data?.files ?? [] | fileByType: 'image')?.location) {
             <a [href]="(data?.files ?? [] | fileByType: 'image')?.location" target="_blank" alt="Preview" class="thumb">
                 Visaulizza immagine attuale
             </a>
+            }
             @if(imageFile?.value) {
             <div class="file-preview">
                 <span>{{imageFile?.value?.name}}</span>
@@ -62,9 +64,11 @@
 
         <div style="display: flex; flex-direction: column; gap: 10px; flex:1">
             <h3>Foglio Tecnico</h3>
+            @if((data?.files ?? [] | fileByType: 'pdf')?.location) {
             <a [href]="(data?.files ?? [] | fileByType: 'pdf')?.location" target="_blank" alt="Preview" class="thumb">
                 Visaulizza foglio tecnico attuale
             </a>
+            }
             @if(pdfFile?.value) {
             <div class="file-preview">
                 <span>{{pdfFile?.value?.name}}</span>
@@ -84,6 +88,12 @@
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid">Save</button>
+    <button mat-button mat-dialog-close>Annulla</button>
+    <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid || isSaving()">
+        @if (isSaving()) {
+        Salvataggio in corso...
+        } @else {
+        Salva
+        }
+    </button>
 </mat-dialog-actions>

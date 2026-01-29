@@ -38,7 +38,7 @@ export class ProductDetailComponent implements OnInit {
       this.router.navigate(['/home']);
       throw new Error("Id not valid");
     }
-    this.resourceRestService.getResource(id).pipe(take(1)).subscribe((product) => {
+    this.resourceRestService.getResource(+id).pipe(take(1)).subscribe((product) => {
       this.product = product;
       this.titleService.setTitle(`${product.name} - MediProject`)
     })
