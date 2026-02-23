@@ -84,6 +84,27 @@
             </button>
             }
         </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; flex:1">
+            <h3>Video MP4</h3>
+            <a [href]="(data?.files ?? [] | fileByType: 'video')?.location" target="_blank" alt="Preview" class="thumb">
+                Visaulizza video attuale
+            </a>
+            @if(videoFile?.value) {
+            <div class="file-preview">
+                <span>{{videoFile?.value?.name}}</span>
+                <button mat-icon-button color="warn" (click)="videoFile?.setValue(null)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            } @else {
+            <input type="file" #videoInput (change)="onFileSelected($event, 'video')" accept="video/mp4"
+                style="display: none">
+            <button mat-stroked-button (click)="videoInput.click()">
+                <mat-icon>slow_motion_video</mat-icon> Upload Video
+            </button>
+            }
+        </div>
     </div>
 
 </mat-dialog-content>

@@ -50,7 +50,8 @@ export class ResourceDialogComponent {
         priority: [0, Validators.required],
         details: this.fb.array<{ label: string, description: string }>([]),
         image: this.fb.control<File | null>(null),
-        pdf: this.fb.control<File | null>(null)
+        pdf: this.fb.control<File | null>(null),
+        video: this.fb.control<File | null>(null)
     });
 
     get details() {
@@ -63,6 +64,9 @@ export class ResourceDialogComponent {
 
     get pdfFile() {
         return this.form.get('pdf');
+    }
+    get videoFile() {
+        return this.form.get('video');
     }
 
     addDetail(detail?: { id?: number, label: string, description: string }) {
@@ -78,7 +82,7 @@ export class ResourceDialogComponent {
         this.details.removeAt(index);
     }
 
-    onFileSelected(event: any, type: 'image' | 'pdf') {
+    onFileSelected(event: any, type: 'image' | 'pdf' | 'video') {
         const file: File = event.target.files[0];
         if (file) {
             if (type === 'image' && !file.type.startsWith('image/')) {
@@ -89,11 +93,17 @@ export class ResourceDialogComponent {
                 alert('Please select a PDF file');
                 return;
             }
+            if (type === 'video' && file.type !== 'video/mp4') {
+                alert('Please select an MP4 video file');
+                return;
+            }
 
             if (type === 'image') {
                 this.imageFile?.setValue(file);
-            } else {
+            } else if (type === 'pdf') {
                 this.pdfFile?.setValue(file);
+            } else {
+                this.videoFile?.setValue(file);
             }
         }
     }
@@ -111,6 +121,7 @@ export class ResourceDialogComponent {
             const files: any[] = [];
             if (raw.image) files.push(raw.image);
             if (raw.pdf) files.push(raw.pdf);
+            if (raw.video) files.push(raw.video);
 
             console.log('Files to upload:', files);
 

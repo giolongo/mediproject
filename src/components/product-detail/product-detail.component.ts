@@ -5,7 +5,7 @@ import { take } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Title } from '@angular/platform-browser';
-import { ResourceModel } from '../../app/models/resource.model';
+import { ResourceModel, ResourceFileModel } from '../../app/models/resource.model';
 import { FileByTypePipe } from "../../pipes/file-by-type-pipe";
 
 @Component({
@@ -29,6 +29,14 @@ export class ProductDetailComponent implements OnInit {
   private titleService = inject(Title);
 
   public product?: ResourceModel;
+  public selectedFile?: ResourceFileModel;
+
+  get galleryFiles(): ResourceFileModel[] {
+    if (!this.product?.files) return [];
+    return this.product.files.filter(f =>
+      f.name.toLowerCase() === 'image' || f.name.toLowerCase() === 'video'
+    );
+  }
 
   constructor(private route: ActivatedRoute) { }
 
@@ -40,7 +48,17 @@ export class ProductDetailComponent implements OnInit {
     }
     this.resourceRestService.getResource(+id).pipe(take(1)).subscribe((product) => {
       this.product = product;
+      const gallery = this.galleryFiles;
+      if (gallery.length > 0) {
+        // Prefer image as default view
+        const image = gallery.find(f => f.name.toLowerCase() === 'image');
+        this.selectedFile = image || gallery[0];
+      }
       this.titleService.setTitle(`${product.name} - MediProject`)
     })
+  }
+
+  selectFile(file: ResourceFileModel): void {
+    this.selectedFile = file;
   }
 }
