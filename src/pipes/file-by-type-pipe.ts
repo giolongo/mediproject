@@ -6,8 +6,8 @@ import { ResourceFileModel } from '../app/models/resource.model';
 })
 export class FileByTypePipe implements PipeTransform {
 
-  transform(value?: ResourceFileModel[], type?: 'image' | 'pdf'): ResourceFileModel | undefined {
+  transform(value?: ResourceFileModel[], type?: 'image' | 'pdf' | 'video'): ResourceFileModel | undefined {
     if (!value || !type) return undefined;
-    return value.find(file => file.name.toLowerCase() === type);
+    return value.find(file => file.name.toLowerCase() === type.toLowerCase());
   }
 }

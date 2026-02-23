@@ -38,7 +38,11 @@ export class ResourceRestService {
     if (files && files.length > 0) {
       const formData = new FormData();
       files.forEach(file => {
-        formData.append('files', file, file.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image');
+        if (file.name.toLowerCase().endsWith('.mp4')) {
+          formData.append('files', file, 'video');
+        } else {
+          formData.append('files', file, file.name.toLowerCase().endsWith('.pdf') ? 'pdf' : 'image');
+        }
       })
       return this.http.post<ResourceModel>(`${environment.api}/product/${id}/files`, formData);
     }

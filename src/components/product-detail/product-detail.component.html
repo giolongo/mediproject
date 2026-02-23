@@ -1,8 +1,38 @@
 <main class="pd-layout" *ngIf="product" @slideInFromLeft>
-  <!-- Left Column: Visual -->
+  <!-- Left Column: Media Gallery -->
   <aside class="pd-visual">
-    <div class="sticky-wrapper">
-      <img [src]="(product.files | fileByType: 'image')?.location" [alt]="product.name" />
+    <div class="gallery-container">
+      <!-- Thumbnails (Left side) -->
+      @if (galleryFiles.length > 1) {
+      <div class="thumbnails">
+        @for (file of galleryFiles; track file.id) {
+        <div class="thumbnail" [class.active]="selectedFile?.id === file.id" (click)="selectFile(file)">
+          @if (file.name.toLowerCase() === 'image') {
+          <img [src]="file.location" [alt]="product.name" />
+          } @else if (file.name.toLowerCase() === 'video') {
+          <div class="video-thumb-overlay">
+            <span class="material-icons">play_circle</span>
+          </div>
+          }
+        </div>
+        }
+      </div>
+      }
+
+      <!-- Main Viewer (Right side) -->
+      <div class="main-viewer">
+        @if (selectedFile) {
+        @if (selectedFile.name.toLowerCase() === 'image') {
+        <img [src]="selectedFile.location" [alt]="product.name" @slideInFromLeft />
+        } @else if (selectedFile.name.toLowerCase() === 'video') {
+        <div class="video-container" @slideInFromLeft>
+          <video [src]="selectedFile.location" controls playsinline autoplay muted preload="metadata">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        }
+        }
+      </div>
     </div>
   </aside>
 
